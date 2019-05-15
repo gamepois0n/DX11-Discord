@@ -75,7 +75,7 @@ bool __stdcall DllMain(void* module, unsigned long reason, void* buffer) {
 		uintptr_t dwpresent = 0;
 
 	#ifdef _WIN64
-		dwpresent = memory::occurence(xorstr_("DiscordHook64.dll"), xorstr_("48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 8B F2 48 8B D9 48 8B D1"));
+		dwpresent = memory::occurence(xorstr_("DiscordHook64.dll"), xorstr_("48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 41 8B F8 8B F2"));
 	#else
 		//in discordhook.dll there are 2 present which are really similar, so sig them = gayasss, but you can try modify occurence and you will be able to select which one do you need
 		//sig wich finds both of them - 55 8B EC FF 75 08 B9 ? ? ? ? E8 ? ? ? ? 84 C0 74 48 B9 ? ? ? ? E8 ? ? ? ? A1 ? ? ? ? 8B 15 ? ? ? ? 85 D2 75 0D 50 B9 ? ? ? ?, 
